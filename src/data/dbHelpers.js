@@ -1,15 +1,11 @@
-const knex = require("knex");
-
-const knexConfig = require("../../knexfile.js");
-
-const db = knex(knexConfig.development);
+const db = require('./configKnex')
 
 module.exports = {
   insert: user => {
     return db("users").insert(user);
   },
-  findUsername: username => {
-    return db("users").where("username", username);
+  findUsername: user => {
+    return db("users").where({username: user}).first();
   },
   findUsers: () => {
     return db('users')
