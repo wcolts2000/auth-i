@@ -5,6 +5,8 @@ import UserRegistration from './components/UserRegistration';
 import HomePage from './components/HomePage';
 import UserList from './components/UserList';
 import Login from './components/Login';
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const GlobalStyles = createGlobalStyle`
   body {

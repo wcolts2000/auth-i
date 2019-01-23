@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 export default class UserList extends Component {
 state={
@@ -18,7 +19,7 @@ componentDidMount = () => {
     if(this.state.users.length) {
       return (
         <div>
-          {this.state.users.map(user => <h2>{user.username}</h2>)}
+          {this.state.users.map((user, i) => <h2 key={i}>{user.username}</h2>)}
         </div>
       )
     } else {
